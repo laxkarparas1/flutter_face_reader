@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://maven.regulaforensics.com/RegulaDocumentReader"
+        }
+    }
+}
+
+dependencies {
+    //noinspection GradleDependency
+    implementation('com.regula.face:api:5.1.2371'){
+        transitive = true
+    }
+}
